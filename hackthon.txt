@@ -1,0 +1,60 @@
+MYSQL Hackathon
+1. Create employees Table with below queries and insert data
+CREATE TABLE employees (
+ employee_id INT AUTO_INCREMENT PRIMARY KEY,
+ first_name VARCHAR(50),
+ last_name VARCHAR(50),
+ department_id INT,
+ salary DECIMAL(10, 2),
+ hire_date DATE,
+ job_title VARCHAR(100),
+ FOREIGN KEY (department_id) REFERENCES departments(department_id)
+);
+-- Sample data for employees
+INSERT INTO employees (first_name, last_name, department_id, salary, hire_date, job_title)
+VALUES
+('John', 'Doe', 1, 50000.00, '2015-06-15', 'Sales Manager'),
+('Jane', 'Smith', 2, 90000.00, '2018-04-12', 'Software Engineer'),
+('Alice', 'Johnson', 3, 45000.00, '2019-01-23', 'HR Specialist'),
+('Bob', 'Brown', 4, 70000.00, '2016-11-07', 'Marketing Director'),
+('Charlie', 'Davis', 2, 95000.00, '2020-08-30', 'Software Engineer'),
+('David', 'Miller', 5, 60000.00, '2017-03-14', 'Accountant'),
+('Eve', 'Wilson', 1, 52000.00, '2019-09-17', 'Sales Associate'),
+('Frank', 'Moore', 2, 105000.00, '2015-12-04', 'Senior Software Engineer'),
+('Grace', 'Taylor', 3, 48000.00, '2021-07-01', 'HR Assistant'),
+('Helen', 'Lee', 4, 75000.00, '2022-06-22', 'Content Strategist');
+2. Create departments Table with below queries and insert data
+CREATE TABLE departments (
+ department_id INT AUTO_INCREMENT PRIMARY KEY,
+ department_name VARCHAR(100) NOT NULL
+);
+-- Sample data for departments
+INSERT INTO departments (department_name) VALUES
+('Sales'),
+('Engineering'),
+('Human Resources'),
+('Marketing'),
+Use Case 1: Employee Database (Basic SQL Queries)
+1. Retrieve the names and salaries of all employees.
+2. Update the salary of an employee with ID 102 to $70,000.
+3. Delete an employee record with ID 120.
+4. Find all employees who have a salary greater than $50,000.
+5. Display the top 5 highest-paid employees.
+Use Case 2 : Group By
+1. Find the count of employee of each job-role
+2. Find the sum of salary of each department(deprt ment id to be displayed with total salary)
+Use Case 3 : Joins
+ 1. List the names of employees along with the names of the departments they work in.
+ 2. Find all employees who do not belong to a department (i.e., employees with no department assigned).
+Use Case 4: Stored Procedures (Automation)
+1. Create a stored procedure that takes an employee's ID and updates their salary by a specified percentage.
+2 Create a stored procedure that takes the department ID as input and returns a list of all employees in that
+department along with their job titles.
+3. Create a stored procedure that calculates the total salary cost for a specific department and returns the result.
+Use Case 5: Views (Simplifying Queries)
+1. Create a view that displays all employee names, their department names, and salaries.
+2. Create a view that shows the total salary expenses by department (use aggregation).
+3. Create a view that simplifies the query to list all employees who have been with the company for more
+than 5 years.
+4. Create a view that shows the total number of employees in each department, excluding those with
+salaries below $40,000.
