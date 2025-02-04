@@ -16,7 +16,7 @@ def check_prime_number(number):
     """
     if number <= 1:
         return f"{number} is not a prime number."
-    for i in range(2, int(number**0.5) + 1):  # Optimized check up to square root
+    for i in range(2, int(number**0.5) + 1):
         if number % i == 0:
             return f"{number} is not a prime number."
     return f"{number} is a prime number."
@@ -27,7 +27,7 @@ def find_largest_of_four_numbers(num1, num2, num3, num4):
     Find the Largest of Four Numbers
     Asks the user for four numbers and prints the largest among them.
     """
-    return max(num1, num2, num3, num4)  # using the max function for simplicity
+    return max(num1, num2, num3, num4)
 
 
 def calculate_electricity_bill(units):
@@ -97,12 +97,12 @@ def convert_temperature(conversion_type, temperature):
     Convert Temperature (Celsius to Fahrenheit or Vice Versa)
     Asks the user if they want to convert Celsius to Fahrenheit or vice versa.
     """
-    if conversion_type == 1:  # Celsius to Fahrenheit
+    if conversion_type == 1:
         fahrenheit = (temperature * 9 / 5) + 32
-        return f"Temperature in Fahrenheit: {fahrenheit}°F"
+        return f"Temperature in Fahrenheit: {fahrenheit:.2f}°F"
     elif conversion_type == 2:  # Fahrenheit to Celsius
         celsius = (temperature - 32) * 5 / 9
-        return f"Temperature in Celsius: {celsius}°C"
+        return f"Temperature in Celsius: {celsius:.2f}°C"
     else:
         return "Invalid conversion type."
 
@@ -116,3 +116,8 @@ def check_multiple(num1, num2):
         return f"{num1} is a multiple of {num2}."
     else:
         return f"{num1} is not a multiple of {num2}."
+
+
+print(
+    convert_temperature(int(input("Enter a number:")), int(input("Enter temperature")))
+)
